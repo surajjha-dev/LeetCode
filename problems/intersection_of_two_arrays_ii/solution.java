@@ -1,7 +1,41 @@
 class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
-        // O(n + m)
+        //return solution1(nums1, nums2);
+        
+         Arrays.sort(nums1);
+         Arrays.sort(nums2);
             
+         int a1 = 0, a2 = 0, l1 = nums1.length, l2 = nums2.length;
+         List<Integer> list = new ArrayList<>();   
+            
+         while (true) {
+                 
+              if (a1 == l1 || a2 == l2)
+                   break;   
+                 
+              if (nums1[a1] == nums2[a2]) {
+                  list.add(nums1[a1]);
+                  a1++;
+                  a2++;    
+              } else if (nums1[a1] < nums2[a2]) {
+                   a1++; 
+              } else if (nums1[a1] > nums2[a2]) {
+                   a2++; 
+              }   
+                 
+         }   
+            
+        int [] res = new int [list.size()];
+        int r = 0;  
+        for (Integer v: list) {
+              res[r++] = v;  
+        }
+            
+        return res;    
+    }
+        
+    public int [] solution1(int [] nums1, int [] nums2) {
+        // O(n + m)    
         Set<Integer> hashSet = new HashSet<>();
         int [] count = new int[1001];
         List<Integer> array = new ArrayList<>();    
@@ -43,5 +77,5 @@ class Solution {
         }
             
         return res;
-    }
+    }    
 }
