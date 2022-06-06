@@ -25,7 +25,7 @@ class Solution {
                          break;
          }
             
-         return nums;   
+         return nums;
     }
         
    public int [] selectionSort(int [] nums) {
@@ -55,11 +55,11 @@ class Solution {
            
         for (int j = 1; j < n; j++) {
               back = j;
-              temp = nums[j];  
+              temp = nums[j];
                 
               // Traversing to the left side for finding the correct position  
               while (back != 0 && nums[back - 1] > temp) {
-                   swap(nums, back, back-1);                      
+                   swap(nums, back, back-1);                 
                    back--;   
               }   
         }   
@@ -102,6 +102,10 @@ class Solution {
          nums[i] = nums[i] ^ nums[j];
          nums[j] = nums[i] ^ nums[j];
          nums[i] = nums[i] ^ nums[j];
-   }     
+   }
+        
+   public void quickSort(int [] nums, int l, int r) {
+           
+   }    
         
 }
